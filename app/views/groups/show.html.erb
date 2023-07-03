@@ -2,7 +2,7 @@
 <%= flash[:notice] %>
   <div class='row'>
     <div class='col-md-3'>
-      <%= render 'users/info', user: @user %>
+      <%= render 'users/info', user: current_user %>
       <%= render 'books/form', book: @book  %>
     </div>
     <div class='col-md-8 offset-md-1'>
@@ -30,7 +30,7 @@
             <td><%= @group.name %></td>
             <td><%= @group.introduction %></td>
             <td><% @group.users.each do |user| %>
-　　            <li style="list-style: none;"><%= user.name %></li>
+　　            <%= user.name %>
                 <% end %>
             </td>
             <td>
